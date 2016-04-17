@@ -1,4 +1,4 @@
-package cs1302.calc;
+0;136;0cpackage cs1302.calc;
 
 /* Implement the Math interface using iteration here. For each method, replace
  * the throw statement with your implementation.
@@ -7,7 +7,7 @@ package cs1302.calc;
 /**
  * REPLACE ME WITH ACTUAL JAVADOC FOR THIS CLASS.
  *
- * @author AUTHOR
+ * @autOAOBhor AUTHOR
  */
 public class IterativeMath implements Math {
 
