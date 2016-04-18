@@ -16,6 +16,8 @@ public class LabelHandler implements EventHandler<MouseEvent> {
 	}else{
 	    bit.setText("0");
 	} //else
+	
+	
 
     } //handle
 

@@ -282,6 +282,7 @@ public class CalcDisplays{
 	    } //else
     } //toggleBit
 
+<<<<<<< HEAD
     private void updateBinaryString(int pos){
        
 	String pre = binaryString.substring(0,pos);
@@ -306,4 +307,6 @@ public class CalcDisplays{
     } //setCalcTextArea
 
     
+=======
+>>>>>>> 663eade362b7d279daa6c617315e27833f8e5683
 } //CalcDisplays
