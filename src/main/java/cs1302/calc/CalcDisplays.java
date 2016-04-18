@@ -35,10 +35,14 @@ public class CalcDisplays{
     HBox hboxBitIndex;
     VBox vboxBits;
 
+    String binaryString;
+
     public CalcDisplays(){
 
 	bitFont = Font.font("Comic Sans MS", FontWeight.BOLD, 20);
 	indexFont = Font.font("Comic Sans MS", FontWeight.NORMAL, 13);
+
+	binaryString = "00000000000000000000000000000000";
 
 	initializeCalcBits();
 	initializeBitIndex();
@@ -77,10 +81,170 @@ public class CalcDisplays{
 	vboxBits = new VBox();
 	vboxBits.getChildren().addAll(hboxBits,hboxBitIndex);
 	
-	LabelHandler lh = new LabelHandler();
-	for(int i=0;i<calcBits.length;i++){
-	    calcBits[i].setOnMouseClicked(lh);
-	} //for
+	//	LabelHandler lh = new LabelHandler();
+	//	for(int i=0;i<calcBits.length;i++){
+	    //  calcBits[i].setOnMouseClicked(lh);
+	    //	} //for
+
+	calcBits[0].setOnMouseClicked(event -> {
+		toggleBit(calcBits[0].getText());
+		updateBinaryString(0);
+	    });
+
+	calcBits[1].setOnMouseClicked(event -> {
+                toggleBit(calcBits[1].getText());
+		updateBinaryString(1);
+            });
+	
+	calcBits[2].setOnMouseClicked(event -> {
+                toggleBit(calcBits[2].getText());
+		updateBinaryString(2);
+            });
+
+	calcBits[3].setOnMouseClicked(event -> {
+                toggleBit(calcBits[3].getText());
+		updateBinaryString(3);
+            });
+
+	calcBits[4].setOnMouseClicked(event -> {
+                toggleBit(calcBits[4].getText());
+		updateBinaryString(4);
+            });
+
+	calcBits[5].setOnMouseClicked(event -> {
+                toggleBit(calcBits[5].getText());
+		updateBinaryString(5);
+            });
+
+	calcBits[6].setOnMouseClicked(event -> {
+                toggleBit(calcBits[6].getText());
+		updateBinaryString(6);
+            });
+
+	calcBits[7].setOnMouseClicked(event -> {
+                toggleBit(calcBits[7].getText());
+		updateBinaryString(7);
+            });
+
+	calcBits[8].setOnMouseClicked(event -> {
+                toggleBit(calcBits[8].getText());
+		updateBinaryString(8);
+            });
+
+	calcBits[9].setOnMouseClicked(event -> {
+                toggleBit(calcBits[9].getText());
+		updateBinaryString(9);
+            });
+
+	calcBits[10].etOnMouseClicked(event -> {
+                toggleBit(calcBits[10].getText());
+		updateBinaryString(10);
+            });
+
+       	calcBits[11].getOnMouseClicked(event -> {
+                 toggleBit(calcBits[11].getText());
+		 updateBinaryString(11);
+            });
+
+	calcBits[12].getOnMouseClicked(event -> {
+                toggleBit(calcBits[12].getText());
+		updateBinaryString(12);
+            });
+	
+	calcBits[13].getOnMouseClicked(event -> {
+                toggleBit(calcBits[13].getText());
+		updateBinaryString(13);
+            });
+
+        calcBits[14].getOnMouseClicked(event -> {
+                toggleBit(calcBits[14].getText());
+		updateBinaryString(14);
+            });
+
+        calcBits[15].getOnMouseClicked(event -> {
+                toggleBit(calcBits[15].getText());
+		updateBinaryString(15);
+            });
+
+	calcBits[16].getOnMouseClicked(event -> {
+                toggleBit(calcBits[16].getText());
+		updateBinaryString(16);
+            });
+
+        calcBits[17].getOnMouseClicked(event -> {
+                toggleBit(calcBits[17].getText());
+		updateBinaryString(17);
+            });
+
+        calcBits[18].getOnMouseClicked(event -> {
+                toggleBit(calcBits[18].getText());
+		updateBinaryString(18);
+            });
+
+	calcBits[19].getOnMouseClicked(event -> {
+                toggleBit(calcBits[19].getText());
+		updateBinaryString(19);
+            });
+
+        calcBits[20].getOnMouseClicked(event -> {
+                toggleBit(calcBits[20].getText());
+		updateBinaryString(20);
+            });
+
+        calcBits[21].getOnMouseClicked(event -> {
+                toggleBit(calcBits[21].getText());
+		updateBinaryString(21);
+            });
+
+	calcBits[22].getOnMouseClicked(event -> {
+                toggleBit(calcBits[22].getText());
+		updateBinaryString(22);
+            });
+
+        calcBits[23].getOnMouseClicked(event -> {
+                toggleBit(calcBits[23].getText());
+		updateBinaryString(23);
+            });
+
+        calcBits[24].getOnMouseClicked(event -> {
+                toggleBit(calcBits[24].getText());
+		updateBinaryString(24);
+            });
+
+        calcBits[25].getOnMouseClicked(event -> {
+                toggleBit(calcBits[25].getText());
+		updateBinaryString(25);
+            });
+
+	calcBits[26].getOnMouseClicked(event -> {
+                toggleBit(calcBits[26].getText());
+		updateBinaryString(26);
+            });
+
+        calcBits[27].getOnMouseClicked(event -> {
+                toggleBit(calcBits[27].getText());
+		updateBinaryString(27);
+            });
+
+        calcBits[28].getOnMouseClicked(event -> {
+                toggleBit(calcBits[28].getText());
+		updateBinaryString(28);
+            });
+
+        calcBits[29].getOnMouseClicked(event -> {
+                toggleBit(calcBits[29].getText());
+		updateBinaryString(29);
+            });
+
+	calcBits[30].getOnMouseClicked(event -> {
+                toggleBit(calcBits[30].getText());
+		updateBinaryString(30);
+            });
+
+	calcBits[31].getOnMouseClicked(event -> {
+                toggleBit(calcBits[31].getText());
+		updateBinaryString(31);
+            });
 
     } //constructor
 
@@ -117,4 +281,29 @@ public class CalcDisplays{
 		bit.setText("0");
 	    } //else
     } //toggleBit
+
+    private void updateBinaryString(int pos){
+       
+	String pre = binaryString.substring(0,pos);
+	if(pos<31){
+	    String post = binaryString.substring(pos+1);
+	    binaryString = pre+(calcBits[pos].getText())+post);
+        } //if
+	else{
+	    binaryString = pre+(calcBits[pos].getText());
+	} //else
+	
+
+
+    } //setBinaryString
+
+    public String getBinaryString(){
+	return binaryString;
+    } //getBinaryString
+
+    public void setCalcTextArea(String buttonText){
+	calcTextArea.setText(calcTextArea.getText() + buttonText);
+    } //setCalcTextArea
+
+    
 } //CalcDisplays
