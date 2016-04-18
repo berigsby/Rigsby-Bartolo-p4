@@ -1,3 +1,5 @@
+package cs1302.calc;
+
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Label;

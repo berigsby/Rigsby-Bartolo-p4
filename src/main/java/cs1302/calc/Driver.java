@@ -1,3 +1,5 @@
+package cs1302.calc;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.layout.BorderPane;

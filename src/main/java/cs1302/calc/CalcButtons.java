@@ -1,3 +1,5 @@
+package cs1302.calc;
+
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -64,32 +66,32 @@ public class CalcButtons{
 	
 	vbox = new VBox();
 
-	imageZero = new Image("/Nodes/Project 4 - 0.png");
-	imageOne = new Image("/Nodes/Project 4 - 1.png");
-	imageTwo = new Image("/Nodes/Project 4 - 2.png");
-        imageThree = new Image("/Nodes/Project 4 - 3.png");
-	imageFour = new Image("/Nodes/Project 4 - 4.png");
-        imageFive = new Image("/Nodes/Project 4 - 5.png");
-	imageSix = new Image("/Nodes/Project 4 - 6.png");
-        imageSeven = new Image("/Nodes/Project 4 - 7.png");
-	imageEight = new Image("/Nodes/Project 4 - 8.png");
-        imageNine = new Image("/Nodes/Project 4 - 9.png");
+	imageZero = new Image("file:src/main/resources/Nodes/Project 4 - 0.png");
+	imageOne = new Image("file:src/main/resources/Nodes/Project 4 - 1.png");
+	imageTwo = new Image("file:src/main/resources/Nodes/Project 4 - 2.png");
+        imageThree = new Image("file:src/main/resources/Nodes/Project 4 - 3.png");
+	imageFour = new Image("file:src/main/resources/Nodes/Project 4 - 4.png");
+        imageFive = new Image("file:src/main/resources/Nodes/Project 4 - 5.png");
+	imageSix = new Image("file:src/main/resources/Nodes/Project 4 - 6.png");
+        imageSeven = new Image("file:src/main/resources/Nodes/Project 4 - 7.png");
+	imageEight = new Image("file:src/main/resources/Nodes/Project 4 - 8.png");
+        imageNine = new Image("file:src/main/resources/Nodes/Project 4 - 9.png");
 
-	imageAsterisk = new Image("/Nodes/Project 4 - Asterisk.png");
-        imageHideBinary = new Image("/Nodes/Project 4 - Hide Binary.png");
-        imageUnhideBinary = new Image("/Nodes/Project 4 - Unhide Binary.png");
-        imageLeftDArrows = new Image("/Nodes/Project 4 - Double Left Arrows.png");
-        imageRightDArrows = new Image("/Nodes/Project 4 - Double Right Arrows.png");
-        imageEqual = new Image("/Nodes/Project 4 - Equal.png");
-        imageExclamation = new Image("/Nodes/Project 4 - Exclamation.png");
-        imageExponent = new Image("/Nodes/Project 4 - Exponent.png");
-        imageForwardSlash = new Image("/Nodes/Project 4 - Forward Slash.png");
-        imageLeftArrow = new Image("/Nodes/Project 4 - Left Arrow.png");
-	imageMinus = new Image("/Nodes/Project 4 - Minus.png");
-        imagePlus = new Image("/Nodes/Project 4 - Plus.png");
-        imageMultiply = new Image("/Nodes/Project 4 - Multiply.png");
-        imageUseRecursion = new Image("/Nodes/Project 4 - Use Recursion.png");
-        imageUnuseRecursion = new Image("/Nodes/Project 4 - Unuse Recursion.png");
+	imageAsterisk = new Image("file:src/main/resources/Nodes/Project 4 - Asterisk.png");
+        imageHideBinary = new Image("file:src/main/resources/Nodes/Project 4 - Hide Binary.png");
+        imageUnhideBinary = new Image("file:src/main/resources/Nodes/Project 4 - Unhide Binary.png");
+        imageLeftDArrows = new Image("file:src/main/resources/Nodes/Project 4 - Double Left Arrows.png");
+        imageRightDArrows = new Image("file:src/main/resources/Nodes/Project 4 - Double Right Arrows.png");
+        imageEqual = new Image("file:src/main/resources/Nodes/Project 4 - Equal.png");
+        imageExclamation = new Image("file:src/main/resources/Nodes/Project 4 - Exclamation.png");
+        imageExponent = new Image("file:src/main/resources/Nodes/Project 4 - Exponent.png");
+        imageForwardSlash = new Image("file:src/main/resources/Nodes/Project 4 - Forward Slash.png");
+        imageLeftArrow = new Image("file:src/main/resources/Nodes/Project 4 - Left Arrow.png");
+	imageMinus = new Image("file:src/main/resources/Nodes/Project 4 - Minus.png");
+        imagePlus = new Image("file:src/main/resources/Nodes/Project 4 - Plus.png");
+        imageMultiply = new Image("file:src/main/resources/Nodes/Project 4 - Multiply.png");
+        imageUseRecursion = new Image("file:src/main/resources/Nodes/Project 4 - Use Recursion.png");
+        imageUnuseRecursion = new Image("file:src/main/resources/Nodes/Project 4 - Unuse Recursion.png");
 
 	asterisk = new Button();
 	leftDArrows = new Button();

@@ -1,3 +1,5 @@
+package cs1302.calc;
+
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
