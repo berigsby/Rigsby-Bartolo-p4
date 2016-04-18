@@ -1,38 +1,34 @@
-package cs1302.calc;
-
-import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
+import javafx.application.Platform;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import java.io.IOException;
- 
+import javafx.scene.Scene;
+
 public class Driver extends Application {
 
     public static void main(String[] args) {
         launch(args);
     } // main
-    
+
     @Override
-    public void start(Stage primaryStage) {
+	public void start(Stage stage) {
 
-	Parent root = null;
+	BorderPane pane = new BorderPane();
 
-	try {
-	    root = FXMLLoader.load(getClass().getResource("/calc.fxml"));
-	} catch (IOException e) {
-	    System.out.println(e);
-	    System.exit(1);
-	} // try
+	CalcButtons cb = new CalcButtons();
+	CalcDisplays cd = new CalcDisplays();
 
-        primaryStage.setTitle("CalcFX!");
-	primaryStage.setScene(new Scene(root, 640, 480));
-        primaryStage.show();
+	pane.setTop(cd.getTextArea());
+	pane.setRight(cd.getVBoxBits());
+	pane.setBottom(cb.getVBox());
+	Scene scene = new Scene(pane);
 
+	stage.setTitle("Programmer's Calculator");
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.show();
+        
     } // start
 
 } // Driver
-
-
