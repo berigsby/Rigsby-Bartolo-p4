@@ -16,6 +16,7 @@ public class RecursiveMath implements Math {
     } // inc
 
     public int dec(int n) {
+	if(n == 0) return 0;
         return n - 1;
     } // dec
 
@@ -40,20 +41,20 @@ public class RecursiveMath implements Math {
     } // mul_rec
 
     public int div(int lhs, int rhs) {
+	if(rhs == 0) throw new ArithmeticException();
 	return div_rec(lhs, rhs, 0);
     }//div
 
     private int div_rec(int lhs, int rhs, int sum) {
-	if(rhs < lhs) return sum;
+	if(lhs < rhs) return sum;
 	return div_rec(sub(lhs, rhs), rhs, inc(sum));
     }//div_rec
 
     public int fac(int n) {
-	if(n == 0) return 0;
         return fac_rec(n, 1);
     } // fac
 
-    public int fac_rec(int n, int sum) {
+    private int fac_rec(int n, int sum) {
 	if(n == 0) return sum;
 	return fac_rec(dec(n), mul(sum, n));
     } // fac_rec
@@ -62,7 +63,7 @@ public class RecursiveMath implements Math {
         return pow_rec(lhs, rhs, 1);
     } // pow
 
-    public int pow_rec(int lhs, int rhs, int product) {
+    private int pow_rec(int lhs, int rhs, int product) {
 	if(rhs == 0) return product;
         return pow_rec(lhs, dec(rhs), mul(product, lhs));
     } // pow_rec
