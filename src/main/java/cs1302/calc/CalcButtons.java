@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 
 public class CalcButtons{
 
+    CalcDisplays cd = new CalcDisplays();
+
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9; //buttons with numbers
     Button asterisk;
     Button leftDArrows;
@@ -56,6 +58,8 @@ public class CalcButtons{
     Image imageMultiply;
     Image imageUseRecursion;
     Image imageUnuseRecursion;
+
+    
 
     public CalcButtons(){
 
@@ -151,6 +155,98 @@ public class CalcButtons{
 
 	vbox.getChildren().addAll(hbox1,hbox2,hbox3,hbox4);
 	
+	b0.setOnAction(event -> {
+		cd.setCalcTestArea("0");
+	});
+
+	b1.setOnAction(event -> {
+		cd.setCalcTestArea("1");
+	});
+
+	b2.setOnAction(event -> {
+		cd.setCalcTestArea("2");
+	});
+
+	b3.setOnAction(event -> {
+		cd.setCalcTestArea("3");
+	});
+
+	b4.setOnAction(event -> {
+		cd.setCalcTestArea("4");
+	});
+
+	b5.setOnAction(event -> {
+		cd.setCalcTestArea("5");
+	});
+
+	b6.setOnAction(event -> {
+		cd.setCalcTestArea("6");
+	});
+
+	b7.setOnAction(event -> {
+		cd.setCalcTestArea("7");
+	});
+
+	b8.setOnAction(event -> {
+		cd.setCalcTestArea("8");
+	});
+
+	b9.setOnAction(event -> {
+		cd.setCalcTestArea("9");
+	});
+
+	asterick.setOnAction(event -> {
+		cd.setCalcTestArea(" * ");
+	});
+
+	leftDArrows.setOnAction(event -> {
+		cd.setCalcTestArea("");
+	});
+
+	rightDArrows.setOnAction(event -> {
+		cd.setCalcTestArea("");
+	});
+
+	exMark.setOnAction(event -> {
+		cd.setCalcTestArea(" ! ");
+	});
+
+	exp.setOnAction(event -> {
+		cd.setCalcTestArea(" ^ ");
+	});
+
+	forSlash.setOnAction(event -> {
+		cd.setCalcTestArea(" / ");
+	});	
+
+	minus.setOnAction(event -> {
+		cd.setCalcTestArea(" - ");
+	});
+
+	plus.setOnAction(event -> {
+		cd.setCalcTestArea(" + ");
+	});
+
+	multi.setOnAction(event -> {
+		
+	});
+
+	equals.setOnAction(event -> {
+		
+	});
+
+	leftArrow.setOnAction(event -> {
+		
+	});
+
+	binaryButton.setOnAction(event -> {
+		
+	});
+
+	recurButton.setOnAction(event -> {
+		
+	});
+
     } //constructor
    
     public VBox getVBox(){

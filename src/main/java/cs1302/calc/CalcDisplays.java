@@ -117,4 +117,5 @@ public class CalcDisplays{
 		bit.setText("0");
 	    } //else
     } //toggleBit
+
 } //CalcDisplays
