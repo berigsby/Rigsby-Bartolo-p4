@@ -156,75 +156,75 @@ public class CalcButtons{
 	vbox.getChildren().addAll(hbox1,hbox2,hbox3,hbox4);
 	
 	b0.setOnAction(event -> {
-		cd.setCalcTestArea("0");
+		cd.setCalcTextArea("0");
 	});
 
 	b1.setOnAction(event -> {
-		cd.setCalcTestArea("1");
+		cd.setCalcTextArea("1");
 	});
 
 	b2.setOnAction(event -> {
-		cd.setCalcTestArea("2");
+		cd.setCalcTextArea("2");
 	});
 
 	b3.setOnAction(event -> {
-		cd.setCalcTestArea("3");
+		cd.setCalcTextArea("3");
 	});
 
 	b4.setOnAction(event -> {
-		cd.setCalcTestArea("4");
+		cd.setCalcTextArea("4");
 	});
 
 	b5.setOnAction(event -> {
-		cd.setCalcTestArea("5");
+		cd.setCalcTextArea("5");
 	});
 
 	b6.setOnAction(event -> {
-		cd.setCalcTestArea("6");
+		cd.setCalcTextArea("6");
 	});
 
 	b7.setOnAction(event -> {
-		cd.setCalcTestArea("7");
+		cd.setCalcTextArea("7");
 	});
 
 	b8.setOnAction(event -> {
-		cd.setCalcTestArea("8");
+		cd.setCalcTextArea("8");
 	});
 
 	b9.setOnAction(event -> {
-		cd.setCalcTestArea("9");
+		cd.setCalcTextArea("9");
 	});
 
-	asterick.setOnAction(event -> {
-		cd.setCalcTestArea(" * ");
+	asterisk.setOnAction(event -> {
+		cd.setCalcTextArea(" * ");
 	});
 
 	leftDArrows.setOnAction(event -> {
-		cd.setCalcTestArea("");
+		cd.setCalcTextArea("");
 	});
 
 	rightDArrows.setOnAction(event -> {
-		cd.setCalcTestArea("");
+		cd.setCalcTextArea("");
 	});
 
 	exMark.setOnAction(event -> {
-		cd.setCalcTestArea(" ! ");
+		cd.setCalcTextArea(" ! ");
 	});
 
 	exp.setOnAction(event -> {
-		cd.setCalcTestArea(" ^ ");
+		cd.setCalcTextArea(" ^ ");
 	});
 
 	forSlash.setOnAction(event -> {
-		cd.setCalcTestArea(" / ");
+		cd.setCalcTextArea(" / ");
 	});	
 
 	minus.setOnAction(event -> {
-		cd.setCalcTestArea(" - ");
+		cd.setCalcTextArea(" - ");
 	});
 
 	plus.setOnAction(event -> {
-		cd.setCalcTestArea(" + ");
+		cd.setCalcTextArea(" + ");
 	});
 
 	multi.setOnAction(event -> {
