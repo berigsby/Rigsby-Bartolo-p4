@@ -333,10 +333,13 @@ public class CalcDisplays{
     }//switchRecursion
 
     public boolean switchBinary(){
-	boolean value = showBinary;
+	//boolean value = showBinary;
 	if(showBinary) showBinary = false;
 	else showBinary = true;
-	return value;
+
+	vboxBits.setVisible(showBinary);
+
+	return showBinary;
     }//switchBinary
 
     public boolean getShowBinary(){
