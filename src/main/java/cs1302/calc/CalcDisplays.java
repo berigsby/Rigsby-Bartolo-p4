@@ -328,7 +328,7 @@ public class CalcDisplays{
 	boolean value = useRecursion;
 	if(useRecursion) useRecursion = false;
 	else useRecursion = true;
-	return useRecursion;
+	return value;
     }//switchRecursion
 
     public void equalsClicked(){
