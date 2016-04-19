@@ -41,6 +41,8 @@ public class CalcDisplays{
 
     String binaryString;
 
+    boolean useRecursion = true;
+
     public CalcDisplays(){
 
 	bitFont = Font.font("Comic Sans MS", FontWeight.BOLD, 20);
@@ -322,9 +324,12 @@ public class CalcDisplays{
 	}
     } //setCalcTextArea
 
-    private void binaryToNum(String binary){
-	
-    }//binaryToNum
+    public boolean switchRecursion(){
+	boolean value = useRecursion;
+	if(useRecursion) useRecursion = false;
+	else useRecursion = true;
+	return useRecursion;
+    }//switchRecursion
 
     public void equalsClicked(){
 	// string containing a mathematical expression represented in infix notation
@@ -339,9 +344,13 @@ public class CalcDisplays{
 
 	// create an instance of your BasicMath class
 	Math iterativeMath = new IterativeMath();
+	Math recursiveMath = new RecursiveMath();
 
 	// use the ReversePolishNotation class to evaluate the expression
-	int result = ReversePolishNotation.evaluate(iterativeMath, postfix);
+
+	int result = 0;
+	if(useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
+	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
 
 	numTextArea.setText("" + result);
 

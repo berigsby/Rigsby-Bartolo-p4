@@ -246,7 +246,8 @@ public class CalcButtons{
 	});
 
 	recurButton.setOnAction(event -> {
-		recurButton.setGraphic(new ImageView(imageUnuseRecursion));
+		if(cd.switchRecursion()) recurButton.setGraphic(new ImageView(imageUnuseRecursion));
+		else recurButton.setGraphic(new ImageView(imageUseRecursion));
 	});
 
     } //constructor
