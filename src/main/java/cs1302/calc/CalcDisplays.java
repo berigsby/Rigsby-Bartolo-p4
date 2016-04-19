@@ -261,9 +261,9 @@ public class CalcDisplays{
     } //initializeCalcBits
 
     private void initializeBitIndex(){
-	bitIndex[0] = new Label("0");
-	bitIndex[1] = new Label("     15");
-	bitIndex[2] = new Label("     30");
+	bitIndex[0] = new Label("0 ");
+	bitIndex[1] = new Label("   15");
+	bitIndex[2] = new Label("   30");
 	
 	for(int i=0;i<bitIndex.length;i++){
 	    bitIndex[i].setFont(indexFont);
@@ -306,8 +306,20 @@ public class CalcDisplays{
     } //getBinaryString
 
     public void setCalcTextArea(String buttonText){
-	calcTextArea.setText(calcTextArea.getText() + buttonText);
-	
+	if(buttonText.equals("x")){
+	    calcTextArea.setText("");
+	    return;
+	}else if(buttonText.equals("<")){
+	    if(calcTextArea.getText().length() > 3){
+		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals(" ")){
+		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -3));
+	            return;
+	        }
+	    }
+	    if(calcTextArea.getText().length() != 0) calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -1));
+        }else{
+            calcTextArea.setText(calcTextArea.getText() + buttonText);
+	}
     } //setCalcTextArea
 
     private void binaryToNum(String binary){

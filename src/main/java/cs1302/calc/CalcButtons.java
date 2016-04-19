@@ -202,11 +202,11 @@ public class CalcButtons{
 	});
 
 	leftDArrows.setOnAction(event -> {
-		cd.setCalcTextArea("");
+		cd.setCalcTextArea(" << ");
 	});
 
 	rightDArrows.setOnAction(event -> {
-		cd.setCalcTextArea("");
+		cd.setCalcTextArea(" >> ");
 	});
 
 	exMark.setOnAction(event -> {
@@ -230,7 +230,7 @@ public class CalcButtons{
 	});
 
 	multi.setOnAction(event -> {
-		
+		cd.setCalcTextArea("x");
 	});
 
 	equals.setOnAction(event -> {
@@ -238,7 +238,7 @@ public class CalcButtons{
 	});
 
 	leftArrow.setOnAction(event -> {
-		
+		cd.setCalcTextArea("<");
 	});
 
 	binaryButton.setOnAction(event -> {
