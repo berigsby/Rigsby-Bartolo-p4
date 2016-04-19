@@ -242,7 +242,8 @@ public class CalcButtons{
 	});
 
 	binaryButton.setOnAction(event -> {
-		
+		if(cd.switchBinary()) binaryButton.setGraphic(new ImageView(imageHideBinary));
+		else binaryButton.setGraphic(new ImageView(imageUnhideBinary));
 	});
 
 	recurButton.setOnAction(event -> {

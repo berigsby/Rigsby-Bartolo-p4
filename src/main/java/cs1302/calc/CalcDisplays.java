@@ -42,6 +42,7 @@ public class CalcDisplays{
     String binaryString;
 
     boolean useRecursion = true;
+    boolean showBinary = true;
 
     public CalcDisplays(){
 
@@ -330,6 +331,17 @@ public class CalcDisplays{
 	else useRecursion = true;
 	return value;
     }//switchRecursion
+
+    public boolean switchBinary(){
+	boolean value = showBinary;
+	if(showBinary) showBinary = false;
+	else showBinary = true;
+	return value;
+    }//switchBinary
+
+    public boolean getShowBinary(){
+	return showBinary;
+    }//getShowBinary
 
     public void equalsClicked(){
 	// string containing a mathematical expression represented in infix notation
