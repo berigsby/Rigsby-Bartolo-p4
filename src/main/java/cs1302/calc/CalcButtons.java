@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 
 public class CalcButtons{
 
-    CalcDisplays cd = new CalcDisplays();
+    CalcDisplays cd;
 
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9; //buttons with numbers
     Button asterisk;
@@ -61,7 +61,9 @@ public class CalcButtons{
 
     
 
-    public CalcButtons(){
+    public CalcButtons(CalcDisplays cda){
+
+	this.cd = cda;
 
 	hbox1 = new HBox();
 	hbox2 = new HBox();
@@ -232,7 +234,7 @@ public class CalcButtons{
 	});
 
 	equals.setOnAction(event -> {
-		
+		cd.equalsClicked();
 	});
 
 	leftArrow.setOnAction(event -> {
@@ -244,7 +246,7 @@ public class CalcButtons{
 	});
 
 	recurButton.setOnAction(event -> {
-		
+		recurButton.setGraphic(new ImageView(imageUnuseRecursion));
 	});
 
     } //constructor

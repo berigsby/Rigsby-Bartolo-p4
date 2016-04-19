@@ -6,6 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.geometry.Pos;
 
 public class Driver extends Application {
 
@@ -18,12 +19,13 @@ public class Driver extends Application {
 
 	BorderPane pane = new BorderPane();
 
-	CalcButtons cb = new CalcButtons();
 	CalcDisplays cd = new CalcDisplays();
+	CalcButtons cb = new CalcButtons(cd);
 
 	pane.setTop(cd.getTextArea());
 	pane.setRight(cd.getVBoxBits());
 	pane.setBottom(cb.getVBox());
+        cd.getTextArea().setAlignment(Pos.TOP_RIGHT);
 	Scene scene = new Scene(pane);
 
 	stage.setTitle("Programmer's Calculator");
