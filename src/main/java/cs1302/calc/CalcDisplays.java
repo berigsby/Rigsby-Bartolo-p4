@@ -343,7 +343,11 @@ public class CalcDisplays{
 		}//if
 		
 	    }//if
-	    //if(buttonText.length() == 1 && calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals("!"))  System.out.println("no");
+	    if(calcTextArea.getText().length() >= 2){
+		if(calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals("!")){
+		    if(buttonText.length() ==1) return;
+		}//if
+	    }//if
             calcTextArea.setText(calcTextArea.getText() + buttonText);
 	}
     } //setCalcTextArea
