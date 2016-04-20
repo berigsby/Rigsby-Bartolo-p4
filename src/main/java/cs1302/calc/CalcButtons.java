@@ -210,7 +210,7 @@ public class CalcButtons{
 	});
 
 	exMark.setOnAction(event -> {
-		cd.setCalcTextArea(" ! ");
+		cd.setCalcTextArea(" !");
 	});
 
 	exp.setOnAction(event -> {

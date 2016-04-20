@@ -315,14 +315,35 @@ public class CalcDisplays{
 	    setEqualToBinary(0);
 	    return;
 	}else if(buttonText.equals("<")){
-	    if(calcTextArea.getText().length() > 3){
+	    if(calcTextArea.getText().length() >= 3){
 		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals(" ")){
 		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -3));
 	            return;
-	        }
-	    }
-	    if(calcTextArea.getText().length() != 0) calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -1));
+	        }//if
+	    }//if
+	    if(calcTextArea.getText().length() >= 2){
+		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals("!")){
+		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -2));
+		    return;
+		}//if
+	    }//if
+	    if(calcTextArea.getText().length() != 0){
+		calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -1));
+		return;
+	    }//if
         }else{
+	    if(buttonText.equals(" * ") || buttonText.equals(" / ") || buttonText.equals(" - ") || 
+	       buttonText.equals(" << ") || buttonText.equals(" ^ ") || buttonText.equals(" + ") ||
+	       buttonText.equals(" >> ") || buttonText.equals(" !")){
+		if(calcTextArea.getText().length() != 0){
+		    if(calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals(" ")) return;
+		}//if
+		if(calcTextArea.getText().equals("")){
+		    return;
+		}//if
+		
+	    }//if
+	    //if(buttonText.length() == 1 && calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals("!"))  System.out.println("no");
             calcTextArea.setText(calcTextArea.getText() + buttonText);
 	}
     } //setCalcTextArea
@@ -349,6 +370,10 @@ public class CalcDisplays{
     }//getShowBinary
 
     public void equalsClicked(){
+	if(calcTextArea.getText().equals("")){
+	    setCalcTextArea("x");
+	    return;
+	}//if
 	// string containing a mathematical expression represented in infix notation
 	String expression = calcTextArea.getText();
 
@@ -366,7 +391,7 @@ public class CalcDisplays{
 	// use the ReversePolishNotation class to evaluate the expression
 
 	int result = 0;
-	if(useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
+	if(!useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
 	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
 
 	numTextArea.setText("" + result);
