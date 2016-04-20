@@ -266,7 +266,7 @@ public class CalcDisplays{
     private void initializeBitIndex(){
 	bitIndex[0] = new Label("0 ");
 	bitIndex[1] = new Label("   15");
-	bitIndex[2] = new Label("   30");
+	bitIndex[2] = new Label("   31");
 	
 	for(int i=0;i<bitIndex.length;i++){
 	    bitIndex[i].setFont(indexFont);
@@ -311,6 +311,8 @@ public class CalcDisplays{
     public void setCalcTextArea(String buttonText){
 	if(buttonText.equals("x")){
 	    calcTextArea.setText("");
+	    numTextArea.setText("");
+	    setEqualToBinary(0);
 	    return;
 	}else if(buttonText.equals("<")){
 	    if(calcTextArea.getText().length() > 3){
@@ -368,7 +370,12 @@ public class CalcDisplays{
 	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
 
 	numTextArea.setText("" + result);
+	
+	setEqualToBinary(result);
 
+    }//equalsClicked
+    
+    private void setEqualToBinary(int result){
 	String tempBinaryString = Integer.toBinaryString(result);
 	int temp = tempBinaryString.length();
 	int total32 = 31-temp;
@@ -381,6 +388,6 @@ public class CalcDisplays{
 	    calcBits[i].setText(binaryString.substring(i,i+1));
 	}//for
 
-    }//equalsClicked
-
+    }//setEqualToBinary
+    
 } //CalcDisplays
