@@ -8,6 +8,13 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.geometry.Pos;
 
+/**
+ * the driver to the programmer's calculator. 
+ * program diaplys a calculator which displays
+ * calculated results both in value, and in 
+ * binary. uses both recursion and interation
+ * to perform calculations
+ */
 public class Driver extends Application {
 
     public static void main(String[] args) {
@@ -28,10 +35,10 @@ public class Driver extends Application {
         cd.getTextArea().setAlignment(Pos.TOP_RIGHT);
 	Scene scene = new Scene(pane);
 
-	stage.setTitle("Programmer's Calculator");
+	stage.setTitle("Programmer's Calculator"); //title of window
         stage.setScene(scene);
         stage.sizeToScene();
-        stage.show();
+        stage.show(); //make the stage visible to user
         
     } // start
 

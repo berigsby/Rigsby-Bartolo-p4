@@ -12,6 +12,12 @@ import javafx.geometry.Pos;
 import javafx.scene.input.MouseEvent;
 import javafx.event.EventHandler;
 
+/**
+ * class CalcDisplays displays the bits of 
+ * ones and zeros. Also displays the input of 
+ * the user followed by the result
+ */
+
 public class CalcDisplays{
 
     Label l0,l1,l2,l3,l4,l5,l6,l7,l8,l9, //the zeros and ones
@@ -72,7 +78,8 @@ public class CalcDisplays{
 	textArea = new VBox();
 	textArea.getChildren().addAll(calcTextArea,numTextArea);
 	textArea.setPadding(new Insets(5, 10, 5, 0));
-
+	
+	//sets each bit to an assigned group bits in an HBox
 	hbox1 = new HBox();
 	hbox1.getChildren().addAll(calcBits[0],calcBits[1],calcBits[2]);
 	hbox2 = new HBox();
@@ -90,25 +97,23 @@ public class CalcDisplays{
 	hbox8 = new HBox();
         hbox8.getChildren().addAll(calcBits[27],calcBits[28],calcBits[29],calcBits[30]);
 
+	//sets the index beneath the bits to an HBox
 	hboxBitIndex = new HBox();
 	hboxBitIndex.getChildren().addAll(bitIndex[2],bitIndex[1],bitIndex[0]);
         hboxBitIndex.setSpacing(248);
 
+	//sets all the individual bit HBoxes to a single HBox
 	hboxBits = new HBox();
 	hboxBits.getChildren().addAll(hbox1,hbox2,hbox3,hbox4,hbox5,hbox6,hbox7,hbox8);
 	hboxBits.setPadding(new Insets(15, 0, 0, 12));
 	hboxBits.setSpacing(16);
 
+	//add both HBoxes to a VBox
 	vboxBits = new VBox();
 	vboxBits.getChildren().addAll(hboxBits,hboxBitIndex);
-	
-	//	LabelHandler lh = new LabelHandler();
-	//	for(int i=0;i<calcBits.length;i++){
-	    //  calcBits[i].setOnMouseClicked(lh);
-	    //	} //for
 
-	calcBits[0].setOnMouseClicked(event -> {
-		toggleBit(calcBits[0]);
+	calcBits[0].setOnMouseClicked(event -> { //the handlers for each individual label
+		toggleBit(calcBits[0]);             //displaying an individual bit
 		updateBinaryString(0);
 	    });
 
@@ -264,6 +269,10 @@ public class CalcDisplays{
 
     } //constructor
 
+    /**
+     * initializes each bit label to zero
+     * an set their default font
+     */
     private void initializeCalcBits(){
 	for(int i=0;i<calcBits.length;i++){
 	    calcBits[i] = new Label("0");
@@ -271,6 +280,10 @@ public class CalcDisplays{
 	} //for
     } //initializeCalcBits
 
+    /**
+     * initializes the index labels beneath the bits
+     * and sets their default font
+     */
     private void initializeBitIndex(){
 	bitIndex[0] = new Label("0 ");
 	bitIndex[1] = new Label("   15");
@@ -301,7 +314,7 @@ public class CalcDisplays{
     } //getHBox
 
     /**
-     * toggles the bit value to that that it isn't,
+     * toggles the bit value to that it isn't,
      * 1 goes to 0 and 0 goes to 1
      *
      * @param bit, the bit to toggle

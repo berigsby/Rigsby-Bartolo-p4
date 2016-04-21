@@ -7,6 +7,11 @@ import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * class CalcButtons sets up the button nodes
+ * which the user will use to input values for
+ * math function
+ */
 public class CalcButtons{
 
     CalcDisplays cd;
@@ -60,7 +65,13 @@ public class CalcButtons{
     Image imageUnuseRecursion;
 
     
-
+    /**
+     * constructor which initiates the HBoxs with
+     * specific rows of buttons. HBoxes are placed into
+     * a VBox. Buttons are assigned respective images
+     * to be displayed to the user. handlers set up for 
+     * each individual button to handle mouse click events
+     */
     public CalcButtons(CalcDisplays cda){
 
 	this.cd = cda;
@@ -72,6 +83,7 @@ public class CalcButtons{
 	
 	vbox = new VBox();
 
+	//importing the images to be used with the button nodes
 	imageZero = new Image("file:src/main/resources/Nodes/Project 4 - 0.png");
 	imageOne = new Image("file:src/main/resources/Nodes/Project 4 - 1.png");
 	imageTwo = new Image("file:src/main/resources/Nodes/Project 4 - 2.png");
@@ -83,6 +95,7 @@ public class CalcButtons{
 	imageEight = new Image("file:src/main/resources/Nodes/Project 4 - 8.png");
         imageNine = new Image("file:src/main/resources/Nodes/Project 4 - 9.png");
 
+	//importing the images to used with the button nodes
 	imageAsterisk = new Image("file:src/main/resources/Nodes/Project 4 - Asterisk.png");
         imageHideBinary = new Image("file:src/main/resources/Nodes/Project 4 - Hide Binary.png");
         imageUnhideBinary = new Image("file:src/main/resources/Nodes/Project 4 - Unhide Binary.png");
@@ -125,6 +138,7 @@ public class CalcButtons{
 	b8 = new Button();
         b9 = new Button();
 
+	//assigning images to the operator buttons
 	asterisk.setGraphic(new ImageView(imageAsterisk));
 	leftDArrows.setGraphic(new ImageView(imageLeftDArrows));
 	rightDArrows.setGraphic(new ImageView(imageRightDArrows));
@@ -139,6 +153,7 @@ public class CalcButtons{
 	binaryButton.setGraphic(new ImageView(imageHideBinary));
 	recurButton.setGraphic(new ImageView(imageUseRecursion));
 
+	//assigning images to each button displaying digits
         b0.setGraphic(new ImageView(imageZero));
         b1.setGraphic(new ImageView(imageOne));
 	b2.setGraphic(new ImageView(imageTwo));
@@ -150,11 +165,13 @@ public class CalcButtons{
 	b8.setGraphic(new ImageView(imageEight));
         b9.setGraphic(new ImageView(imageNine));
 
+	//adding the button notes to their respective HBoxes
 	hbox1.getChildren().addAll(b7,b8,b9,forSlash,exMark,leftArrow,multi);
 	hbox2.getChildren().addAll(b4,b5,b6,asterisk,exp,leftDArrows,rightDArrows);
 	hbox3.getChildren().addAll(b1,b2,b3,minus,recurButton);
 	hbox4.getChildren().addAll(b0,equals,plus,binaryButton);
 
+	//adding the 4 HBoxes to the single VBox
 	vbox.getChildren().addAll(hbox1,hbox2,hbox3,hbox4);
 	
 	//these set the events corresponding to each button click
@@ -254,6 +271,11 @@ public class CalcButtons{
 
     } //constructor
    
+    /**
+     * returns the VBox with the HBoxs
+     * 
+     * @return VBox with Hboxs containing buttons 
+     */
     public VBox getVBox(){
 	return vbox;
     } //getVBox
