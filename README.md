@@ -1,3 +1,10 @@
+# Project Submission
+
+    Team Member A: Rigsby (250)
+    Team Member B: Bartolo (393)
+
+    [If you did any of the exra credit then please indicate that here.]
+
 # CSCI 1302 - Calculator Project (cs1302-calculator)
 
 _This project is due Sunday, 2015-04-24 @ 11:55 PM EST._

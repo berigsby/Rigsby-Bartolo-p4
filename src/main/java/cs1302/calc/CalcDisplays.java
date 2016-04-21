@@ -26,11 +26,13 @@ public class CalcDisplays{
     
     Label [] bitIndex = {index0,index15,index30}; //the index below the bit
 
+    //Fonts for appropriate areas
     Font bitFont;
     Font indexFont;
     Font calcAreaFont;
     Font numAreaFont;
-    VBox textArea;
+
+    VBox textArea; //container for calcTextArea and numTextArea
     Label calcTextArea;//the user typed number and operations
     Label numTextArea; //The output number
 
@@ -39,29 +41,34 @@ public class CalcDisplays{
     HBox hboxBitIndex;
     VBox vboxBits;
 
-    String binaryString;
+    String binaryString; //the bits on screen represented as a string
 
     boolean useRecursion = true;
     boolean showBinary = true;
 
     public CalcDisplays(){
 
+	//initializes the fonts for appropriate areas
 	bitFont = Font.font("Comic Sans MS", FontWeight.BOLD, 20);
 	indexFont = Font.font("Comic Sans MS", FontWeight.NORMAL, 13);
 	calcAreaFont = Font.font("Comic Sans MS", FontWeight.NORMAL, 25);
 	numAreaFont = Font.font("Comic Sans MS", FontWeight.BOLD, 30);
 
+	//default value of string
 	binaryString = "0000000000000000000000000000000";
 
 	initializeCalcBits();
 	initializeBitIndex();
 
+	//User Input(ex. 9 * 9)
 	calcTextArea = new Label();
 	calcTextArea.setFont(calcAreaFont);
 
+	//Output(Answer)
 	numTextArea = new Label();
 	numTextArea.setFont(numAreaFont);
 	
+	//Puts the calcTextArea and numTextArea into a VBox
 	textArea = new VBox();
 	textArea.getChildren().addAll(calcTextArea,numTextArea);
 	textArea.setPadding(new Insets(5, 10, 5, 0));
@@ -274,15 +281,31 @@ public class CalcDisplays{
 	    bitIndex[i].setTextFill(Color.RED);
 	} //for
     } //initializeBitIndex
-
+    
+    /**
+     * Returns VBox containing text areas of user Input and answers
+     *
+     * @return same VBox of textArea, not a copy
+     */
     public VBox getTextArea(){
 	return textArea;
     } //getTextArea
 
+    /**
+     * Returns VBox containing the binary bits and location markers
+     *
+     * @return same VBox of Bits, not a copy
+     */
     public VBox getVBoxBits(){
 	return vboxBits;
     } //getHBox
 
+    /**
+     * toggles the bit value to that that it isn't,
+     * 1 goes to 0 and 0 goes to 1
+     *
+     * @param bit, the bit to toggle
+     */
     public void toggleBit(Label bit){
 	if(bit.getText().equals("0")){
 		bit.setText("1");
@@ -291,6 +314,12 @@ public class CalcDisplays{
 	    } //else
     } //toggleBit
 
+    /**
+     * Changes the stored binaryString to match the current bits
+     * shown as output
+     *
+     * @param pos the position to update
+     */
     private void updateBinaryString(int pos){
        
 	String pre = binaryString.substring(0,pos);
@@ -305,16 +334,29 @@ public class CalcDisplays{
 	numTextArea.setText("" + Integer.parseInt(binaryString, 2));
     } //setBinaryString
 
+    /**
+     * Returns the binaryString, that is the current binary displayed on calculator, used to calculate output
+     *
+     * @return String binaryString
+     */
     public String getBinaryString(){
 	return binaryString;
     } //getBinaryString
 
+    /**
+     * updates the calcTextArea, that is the user input, to use latest input, that is buttonText, if it is applicable
+     *
+     * @param buttonText, the latest user clicked button
+     */
     public void setCalcTextArea(String buttonText){
+	//if user clicks x, will clear area and resets binary/result areas
 	if(buttonText.equals("x")){
 	    calcTextArea.setText("");
 	    numTextArea.setText("");
 	    setEqualToBinary(0);
 	    return;
+	//if user clicks <, it is treated as backspace and takes away
+	//the appropriate amount of spaces to erase latest character
 	}else if(buttonText.equals("<")){
 	    if(calcTextArea.getText().length() >= 3){
 		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals(" ")){
@@ -337,6 +379,7 @@ public class CalcDisplays{
 		calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -1));
 		return;
 	    }//if
+	// if user repeats an opperation that isn't allowed, no input will be added
         }else{
 	    if(buttonText.equals(" * ") || buttonText.equals(" / ") || buttonText.equals(" - ") || 
 	       buttonText.equals(" << ") || buttonText.equals(" ^ ") || buttonText.equals(" + ") ||
@@ -355,9 +398,15 @@ public class CalcDisplays{
 		}//if
 	    }//if
             calcTextArea.setText(calcTextArea.getText() + buttonText);
-	}
+	}//else
     } //setCalcTextArea
 
+    /**
+     * switches the current math mode to one not in use
+     * switches between recursion and iteration
+     *
+     * @return boolean of Recursion value before switch
+     */
     public boolean switchRecursion(){
 	boolean value = useRecursion;
 	if(useRecursion) useRecursion = false;
@@ -365,25 +414,34 @@ public class CalcDisplays{
 	return value;
     }//switchRecursion
 
+    /**
+     * switches the current mode to show binary or not, 
+     * and displays appropriately
+     *
+     * @return boolean of current Binary mode, true if binary is showing
+     */
     public boolean switchBinary(){
-	//boolean value = showBinary;
+	
 	if(showBinary) showBinary = false;
 	else showBinary = true;
 
+	//shows or hides binary numbers
 	vboxBits.setVisible(showBinary);
 
 	return showBinary;
     }//switchBinary
 
-    public boolean getShowBinary(){
-	return showBinary;
-    }//getShowBinary
-
-    public void equalsClicked(){
+    /**
+     * if equals was clicked, sets result and binary text to appropriate values
+     *
+     */
+   public void equalsClicked(){
 	if(calcTextArea.getText().equals("")){
 	    setCalcTextArea("x");
 	    return;
 	}//if
+
+	//copied from project description
 	// string containing a mathematical expression represented in infix notation
 	String expression = calcTextArea.getText();
 
@@ -394,22 +452,28 @@ public class CalcDisplays{
 	// in post-fix notation
 	String postfix[] = ReversePolishNotation.infixToPostfix(infix);
 
-	// create an instance of your BasicMath class
+	// create an instance of our BasicMath class
 	Math iterativeMath = new IterativeMath();
 	Math recursiveMath = new RecursiveMath();
 
 	// use the ReversePolishNotation class to evaluate the expression
-
 	int result = 0;
 	if(!useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
 	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
 
+	//sets result text area
 	numTextArea.setText("" + result);
 	
+	//makes binary equals to result
 	setEqualToBinary(result);
 
     }//equalsClicked
     
+    /**
+     * sets the binary string, and then the bits to match the input result value
+     *
+     * @param result, the number to change to binary
+     */
     private void setEqualToBinary(int result){
 	String tempBinaryString = Integer.toBinaryString(result);
 	int temp = tempBinaryString.length();

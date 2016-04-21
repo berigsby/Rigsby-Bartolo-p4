@@ -157,6 +157,7 @@ public class CalcButtons{
 
 	vbox.getChildren().addAll(hbox1,hbox2,hbox3,hbox4);
 	
+	//these set the events corresponding to each button click
 	b0.setOnAction(event -> {
 		cd.setCalcTextArea("0");
 	});
