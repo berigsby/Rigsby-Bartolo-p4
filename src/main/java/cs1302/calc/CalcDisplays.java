@@ -64,6 +64,7 @@ public class CalcDisplays{
 	
 	textArea = new VBox();
 	textArea.getChildren().addAll(calcTextArea,numTextArea);
+	textArea.setPadding(new Insets(5, 10, 5, 0));
 
 	hbox1 = new HBox();
 	hbox1.getChildren().addAll(calcBits[0],calcBits[1],calcBits[2]);
@@ -317,6 +318,11 @@ public class CalcDisplays{
 	}else if(buttonText.equals("<")){
 	    if(calcTextArea.getText().length() >= 3){
 		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals(" ")){
+		    if(calcTextArea.getText().substring(calcTextArea.getText().length() - 2).equals("> ") ||
+		       calcTextArea.getText().substring(calcTextArea.getText().length() - 2).equals("< ")){
+			   calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -4));
+			   return;
+		       }//if
 		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -3));
 	            return;
 	        }//if
