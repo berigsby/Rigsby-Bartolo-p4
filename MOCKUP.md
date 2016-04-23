@@ -2,13 +2,13 @@
 
 ## Main GUI (Bits Shown and Iteration Used)
 
-![GUI Mockup 1](http://i.imgur.com/FBnOQT6.png)
+![GUI Mockup 1](http://i.imgur.com/HaLAD1z.png)
 
 Our mockup has a UGA theme. Additionaly, each button is a seperate .png file. The field
 for user input (as in when they type 9 * 9, for example) is located as the first line.
 Output information, such as when the user clicks enter, is located at on the second line (ex. 81).
-The third line is where the togglable binary number is located. The small red numbers are simply 
-line markers for ease of use.
+The third line is where the togglable binary number is located (binary shows 81 in this example).
+The small red numbers are simply line markers for ease of use.
 
 ## GUI with Bits Hidden and Recursion Used
 
