@@ -22,10 +22,10 @@ easily switch modes graphically.
 
 ## Additional Interface Elements
 
-The interface will use iteration for its math operations when "Use Recursion" is displayed
-The interface will use recursion for its math operations when "Use Iteration" is displayed
-The interface will show the binary bits when "Hide Binary" is displayed
-The interface will hide the binary bits when "Show Binary" is displayed
+The interface will use iteration for its math operations when "Use Recursion" is displayed.
+The interface will use recursion for its math operations when "Use Iteration" is displayed.
+The interface will show the binary bits when "Hide Binary" is displayed.
+The interface will hide the binary bits when "Show Binary" is displayed.
 
 In other words, the buttons reflect what the user wants to change the calculator to do, not what it is
 currently doing.
