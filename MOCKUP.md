@@ -1,42 +1,32 @@
 # GUI Mockup
 
-Modify this document to include information about your GUI mockups. You should
-upload your mockup images to an image hosting site (e.g., 
-[imgur](http://imgur.com/)), and include them in this Markdown document with 
-descriptions. Let the rest of this document serve as an example.
-
-**Note:** If you view this <code>MOCKUP.md</code> file on GitHub, the Markdown
-syntax will automatically be rendered so that it looks nice in your internet
-browser. You need click on the <code>Raw</code> button in the upper
-right-hand side of the document (when viewing on GitHub) in order to view the
-plain text version of the document. This plain text view is the same thing
-you will see when editing your <code>MOCKUP.md</code> file using Emacs
-or Vi.
-
-**Note:** For more information on Markdown syntax, see the
-[Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax) and the help page for 
-[GitHub Flavored Markdown](http://daringfireball.net/projects/markdown/syntax).
-
-## Main GUI
-
-You can include your image, as follows:
+## Main GUI (Bits Shown and Iteration Used)
 
 ![GUI Mockup 1](http://i.imgur.com/FBnOQT6.png)
 
-You can type a description of the mockup here. Include any information about
-additional features you have mocked up in your interface.
+Our mockup has a UGA theme. Additionaly, each button is a seperate .png file. The field
+for user input (as in when they type 9 * 9, for example) is located as the first line.
+Output information, such as when the user clicks enter, is located at on the second line (ex. 81).
+The third line is where the togglable binary number is located. The small red numbers are simply 
+line markers for ease of use.
 
-## GUI with Bit Toggle
+## GUI with Bits Hidden and Recursion Used
 
 Here is another image...
 
 ![GUI Mockup 2](http://i.imgur.com/Ycu7Peh.png)
 
-This mockup includes the binary bit toggle. I designed this way because...
+This mockup includes the binary bits toggled off and Recursion being used. This shows how the buttons
+will change the .png file they display, rather than updating the text. We designed it this way to
+easily switch modes graphically.
 
 ## Additional Interface Elements
 
-You can include additional sections to this document as needed.
+The interface will use iteration for its math operations when "Use Recursion" is displayed
+The interface will use recursion for its math operations when "Use Iteration" is displayed
+The interface will show the binary bits when "Hide Binary" is displayed
+The interface will hide the binary bits when "Show Binary" is displayed
 
-
+In other words, the buttons reflect what the user wants to change the calculator to do, not what it is
+currently doing.
 
