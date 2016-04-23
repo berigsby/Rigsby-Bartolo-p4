@@ -30,7 +30,7 @@ additional features you have mocked up in your interface.
 
 Here is another image...
 
-![GUI Mockup 2](http://i.imgur.com/nf6LRol.png)
+![GUI Mockup 2](http://i.imgur.com/Ycu7Peh.png)
 
 This mockup includes the binary bit toggle. I designed this way because...
 
