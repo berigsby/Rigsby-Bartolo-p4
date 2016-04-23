@@ -43,6 +43,8 @@ public class CalcDisplays{
 
     String binaryString; //the bits on screen represented as a string
 
+    int tempResult = -1;
+
     boolean useRecursion = true;
     boolean showBinary = true;
 
@@ -384,6 +386,11 @@ public class CalcDisplays{
 	    if(buttonText.equals(" * ") || buttonText.equals(" / ") || buttonText.equals(" - ") || 
 	       buttonText.equals(" << ") || buttonText.equals(" ^ ") || buttonText.equals(" + ") ||
 	       buttonText.equals(" >> ") || buttonText.equals(" !")){
+		if(tempResult != -1){
+		    calcTextArea.setText(tempResult + buttonText);
+		    tempResult = -1;
+		    return;
+		}//if
 		if(calcTextArea.getText().length() != 0){
 		    if(calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals(" ")) return;
 		}//if
@@ -396,6 +403,12 @@ public class CalcDisplays{
 		if(calcTextArea.getText().substring(calcTextArea.getText().length()-1).equals("!")){
 		    if(buttonText.length() ==1) return;
 		}//if
+	    }//if
+	    if(tempResult != -1){
+		calcTextArea.setText("" + buttonText);
+		setCalcTextArea("x");
+		tempResult = -1;
+		
 	    }//if
             calcTextArea.setText(calcTextArea.getText() + buttonText);
 	}//else
@@ -460,10 +473,16 @@ public class CalcDisplays{
 	int result = 0;
 	if(!useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
 	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
-
+	
+	if(result < 0) result = 0;
+	
+	
+	
 	//sets result text area
 	numTextArea.setText("" + result);
 	
+	tempResult = result;
+
 	//makes binary equals to result
 	setEqualToBinary(result);
 
