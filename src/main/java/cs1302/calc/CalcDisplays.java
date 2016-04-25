@@ -378,20 +378,24 @@ public class CalcDisplays{
 		    if(calcTextArea.getText().substring(calcTextArea.getText().length() - 2).equals("> ") ||
 		       calcTextArea.getText().substring(calcTextArea.getText().length() - 2).equals("< ")){
 			   calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -4));
+			   tempResult = -1;
 			   return;
 		       }//if
 		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -3));
-	            return;
+	            tempResult = -1;
+		    return;
 	        }//if
 	    }//if
 	    if(calcTextArea.getText().length() >= 2){
 		if(calcTextArea.getText().substring(calcTextArea.getText().length() - 1).equals("!")){
 		    calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -2));
+		    tempResult = -1;
 		    return;
 		}//if
 	    }//if
 	    if(calcTextArea.getText().length() != 0){
 		calcTextArea.setText(calcTextArea.getText().substring(0, calcTextArea.getText().length() -1));
+		tempResult = -1;
 		return;
 	    }//if
 	// if user repeats an opperation that isn't allowed, no input will be added
@@ -484,13 +488,16 @@ public class CalcDisplays{
 
 	// use the ReversePolishNotation class to evaluate the expression
 	int result = 0;
-	if(!useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
-	else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
+
+	try{
+	    if(!useRecursion) result = ReversePolishNotation.evaluate(recursiveMath, postfix);
+	    else result = ReversePolishNotation.evaluate(iterativeMath, postfix);
+	} catch(ArithmeticException ae){
+	    result = 0;
+	}
 	
 	if(result < 0) result = 0;
-	
-	
-	
+		
 	//sets result text area
 	numTextArea.setText("" + result);
 	
